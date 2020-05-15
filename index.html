@@ -13,25 +13,20 @@
 		  <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
 		  <span class="font-semibold text-xl tracking-tight">My Diary</span>
 		</div>
-		<div class="block lg:hidden">
-		  <button class="flex items-center px-3 py-2 border rounded text-blue-200 border-blue-400 hover:text-white hover:border-white">
-			<svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-		  </button>
-		</div>
-		<div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-		  <div class="text-sm lg:flex-grow">
-			
+	
+		<div>
+			<a href="#"  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white lg:mt-0">Download PDF</a>
 		  </div>
-		  <div>
-			<a href="#"  class="inline-block text-sm px-4 py-2 mx-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0">Add Diary</button>
-			<a href="#"  class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-blue-500 hover:bg-white mt-4 lg:mt-0">Download PDF</a>
-		  </div>
-		</div>
 	  </nav>
 
 	  <div class="container mx-auto">
-		  <div class="diary-cards mt-4">
-			  <div class="diary-card shadow-md rounded p-5 w-75 mx-auto my-5 cursor-pointer hover:shadow-lg  ">
+		  <div class="diary-cards mt-4 mx-1">
+			  <div class="add-diary">
+				  <div class="my-5 mx-auto">
+					  <button data-open-diary-model class="px-2 py-2 w-full text-white bg-blue-500 text-center font-bold text-xl rounded hover:bg-blue-800"> Add Diary </button>
+				  </div>
+			  </div>
+			  <div class="diary-card border shadow-md rounded p-5 w-75 mx-auto  my-5 cursor-pointer hover:shadow-lg hover:bg-gray-200 ">
 				<div class="diary-head  border-dashed  border-b-4  border-blue-500 flex items-center justify-between px-4 py-2">
 					<div class="diary-day">
 						<h2 class="text-blue-500 text-4xl font-bold">Friday</h2>
@@ -55,17 +50,17 @@
 
 	  <!-- add Diary model -->
 
-	  <div class="add-diary transition ease-in duration-700 opacity-0 invisible ">
+	  <div data-add-diary-modal class="add-diary transition ease-in duration-300 opacity-0 invisible ">
 		  <div class="w-screen h-screen  absolute top-0 left-0 flex items-center justify-center">
 			<div class="bg-black opacity-75 w-full h-full absolute z-0"></div>
-			<div class="diary-model w-full opacity-100 z-10">
+			<div class="diary-model w-full opacity-100 z-10 mx-4">
 				<div class="container mx-auto ">
 					<div class="bg-white p-5 rounded-lg">
-						<div class="diary-head py-4 my-2 border-dashed  border-b-4  border-blue-500 flex items-center justify-between px-3 py-2">
+						<div class="diary-head flex-wrap  py-4 my-2 border-dashed  border-b-4  border-blue-500 flex items-center justify-between px-3 py-2">
 							<div class="diary-day">
 								<h2 class="text-blue-500 text-4xl font-bold">Friday</h2>
 							</div>
-							<div class="diary-status">
+							<div class="diary-status my-3">
 								<div class="inline-block relative w-64">
 									<select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
 										<option value="happy"> happy </option>
@@ -87,7 +82,7 @@
 						</div>
 						<div class="diary-save">
 							<button class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">Save</button>
-							<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Close</button>
+							<button data-close-diary-modal class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Close</button>
 						</div>
 					</div>
 				</div>
